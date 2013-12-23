@@ -1,3 +1,29 @@
+/* ########### QUICK MOD: ADDING API KEY ########### */
+
+With this mod, every REST call must provide parameter wpapikey.
+It will make the REST request become more secure.
+
+For example: 
+
+http://www.dodyweb.com/?json=get_recent_posts&dev=1&wpapikey=b34b40ca8771c48c204e55f927376885
+
+Otherwise, it will return forbidden error message.
+
+Where to define the api key?
+Edit json-api.php, line 27
+
+$json_api_key = "b34b40ca8771c48c204e55f927376885";
+
+This mod is based from JSON-API 1.1.1.
+In order to update to the latest version, follow modification from the following commit:
+https://github.com/dodyrw/wp-json-api-key/commit/d29459421ceec73e9b639d4e2ffbeb04931df576
+
+/* ########### QUICK MOD: ADDING API KEY ########### */
+
+
+
+
+
 === JSON API ===
 Contributors: dphiffer
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DH4MEG99JR2WE
