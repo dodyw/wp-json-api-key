@@ -22,6 +22,20 @@ $dir = json_api_dir();
 
 function json_api_init() {
   global $json_api;
+
+  /* ########### QUICK MOD: ADDING API KEY ########### */
+  $json_api_key = "b34b40ca8771c48c204e55f927376885";
+  /* ########### QUICK MOD: ADDING API KEY ########### */
+  if ($_GET['json']) {
+    if ($_GET['wpapikey'] != $json_api_key) {
+      print "[error:99] Permission denied!";
+      exit;
+    }
+  }
+  /* ########### QUICK MOD: ADDING API KEY ########### */
+
+
+
   if (phpversion() < 5) {
     add_action('admin_notices', 'json_api_php_version_warning');
     return;
