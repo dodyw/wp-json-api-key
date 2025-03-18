@@ -27,7 +27,7 @@ function json_api_init() {
   $json_api_key = "b34b40ca8771c48c204e55f927376885";
   /* ########### QUICK MOD: ADDING API KEY ########### */
   if ($_GET['json']) {
-    if ($_GET['wpapikey'] != $json_api_key) {
+    if (!isset($_GET['wpapikey']) || $_GET['wpapikey'] != $json_api_key) {
       print "[error:99] Permission denied!";
       exit;
     }
